@@ -33,7 +33,6 @@ public class SbiProjectService {
 	private SbiProjectRepository sbiProjectRepository;
 	private Logger log = LoggerConfiguration.logConfig(SbiProjectService.class);
 
-	
 	private AuthUserDetails authUserDetails() {
 		return (AuthUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	}
