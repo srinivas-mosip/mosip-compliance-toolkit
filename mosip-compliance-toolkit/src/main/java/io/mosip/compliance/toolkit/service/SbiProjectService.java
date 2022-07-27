@@ -57,8 +57,8 @@ public class SbiProjectService {
 			}else {
 				List<ServiceError> serviceErrorsList = new ArrayList<>();
 				ServiceError serviceError = new ServiceError();
-				serviceError.setErrorCode(ToolkitErrorCode.SBI_PROJECT_NOT_AVAILABLE.getErrorCode());
-				serviceError.setMessage(ToolkitErrorCode.SBI_PROJECT_NOT_AVAILABLE.getErrorMessage());
+				serviceError.setErrorCode(ToolkitErrorCodes.SBI_PROJECT_NOT_AVAILABLE.getErrorCode());
+				serviceError.setMessage(ToolkitErrorCodes.SBI_PROJECT_NOT_AVAILABLE.getErrorMessage());
 				serviceErrorsList.add(serviceError);
 				responseWrapper.setErrors(serviceErrorsList);
 			}
