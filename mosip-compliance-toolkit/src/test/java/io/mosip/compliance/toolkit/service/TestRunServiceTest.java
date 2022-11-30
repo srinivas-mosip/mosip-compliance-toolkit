@@ -373,7 +373,8 @@ public class TestRunServiceTest {
 	@Test
 	public void deleteTestRunTestException() {
 		String runId = "";
-		testRunService.deleteTestRun(runId);
+		ResponseWrapper<Boolean> response = testRunService.deleteTestRun(runId);
+		Assert.assertEquals(false, response.getResponse());
 		runId = "123";
 		Mockito.when(securityContext.getAuthentication()).thenReturn(authentication);
 		MosipUserDto mosipUserDto = getMosipUserDto();
@@ -381,7 +382,8 @@ public class TestRunServiceTest {
 		Mockito.when(authentication.getPrincipal()).thenReturn(authUserDetails);
 		SecurityContextHolder.setContext(securityContext);
 		Mockito.when(testRunRepository.getTestRunById(Mockito.any(), Mockito.any())).thenReturn(null);
-		testRunService.deleteTestRun(runId);
+		ResponseWrapper<Boolean> response1 = testRunService.deleteTestRun(runId);
+		Assert.assertEquals(false, response1.getResponse());
 	}
 
 
